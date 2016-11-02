@@ -488,20 +488,20 @@ void casa( GLvoid ) {
 			murohor(1.50, 0.0, 0.0, 0.0, 0.0); //RIGHT3 
 		glPopMatrix();
 		glPushMatrix();
-			glTranslatef(5.22, 0.0, 1.375);
-			murohor(1.75, 0.0, 0.0, 0.0, 0.0); //RIGHT4 
+			glTranslatef(5.22, 0.0, 1.5);
+			murohor(2.0, 0.0, 0.0, 0.0, 0.0); //RIGHT4 
 		glPopMatrix();
 		glPushMatrix();
-			glTranslatef(5.22, 0.0, 4.05);
-			murohor(3.60, 0.0, 0.0, 0.0, 0.0); //RIGHT5 
+			glTranslatef(5.22, 0.0, 4.325);
+			murohor(3.65, 0.0, 0.0, 0.0, 0.0); //RIGHT5 
 		glPopMatrix();
 		glPushMatrix();
-			glTranslatef(2.97, 0.0, 5.89);
+			glTranslatef(2.97, 0.0, 6.19);
 			murover(4.58, 0.0, 0.0, 0.0, 0.0); //FRONT3 
 		glPopMatrix();
 		glPushMatrix();
-			glTranslatef(0.64, 0.0, 7.63);
-			murohor(3.56, 0.0, 0.0, 0.0, 0.0); //RIGHT6 
+			glTranslatef(0.72, 0.0, 7.86);
+			murohor(3.26, 0.0, 0.0, 0.0, 0.0); //RIGHT6 
 		glPopMatrix();
 	glPopMatrix();
 	glPushMatrix();//PISOS
@@ -559,17 +559,11 @@ void casa( GLvoid ) {
 			glTranslatef(-2.21, 0.0, 2.465);
 			murohor(4.85, 0.0, 0.0, 0.0, 0.0); //PARED SUPERIOR
 		glPopMatrix();
-		glPushMatrix();//PAREDES RECAMARA 2
-		glTranslatef(2.93, 0.0, -4.28);
-		murover(4.5, 0.0, 0.0, 0.0, 0.0); //PARED IZQUIERDA
-		glTranslatef(-2.21, 0.0, 2.465);
-		murohor(4.85, 0.0, 0.0, 0.0, 0.0); //PARED SUPERIOR
-		glPopMatrix();
 		glPushMatrix();//PAREDES RECAMARA 1
-			//glTranslatef(2.93, 0.0, -4.28);
-			//murover(4.5, 0.0, 0.0, 0.0, 0.0); //PARED IZQUIERDA
-			//glTranslatef(-2.21, 0.0, 2.465);
-			//murohor(4.85, 0.0, 0.0, 0.0, 0.0); //PARED SUPERIOR
+			glTranslatef(0.72, 0.0, 2.01);
+			murohor(2.8, 0.0, 0.0, 0.0, 0.0); //PARED IZQUIERDA
+			glTranslatef(0.0, 0.0, 2.775);
+			murohor(2.75, 0.0, 0.0, 0.0, 0.0); //PARED SUPERIOR
 		glPopMatrix();
 	glPopMatrix();
 }
