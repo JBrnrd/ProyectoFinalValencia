@@ -378,7 +378,7 @@ void pisocuadrado(float largo, float ancho, GLuint textpiso) {
 
 	glBindTexture(GL_TEXTURE_2D, textpiso);   // choose the texture to use.
 	glBegin(GL_POLYGON);  //Bottom
-	glNormal3f(0.0f, -1.0f, 0.0f);
+	glNormal3f(0.0f, 1.0f, 0.0f);
 		glTexCoord2f(0.0f, 0.0f); glVertex3fv(vertice[0]);
 		glTexCoord2f(1.0f, 0.0f); glVertex3fv(vertice[1]);
 		glTexCoord2f(1.0f, 1.0f); glVertex3fv(vertice[2]);
@@ -414,7 +414,7 @@ void garage(GLvoid) {
 //Construcción de Casa
 void casa( GLvoid ) {
 
-	glPushMatrix();
+	glPushMatrix();//PAREDES EXTERNAS
 		glPushMatrix();
 			glTranslatef(0.49, 0.0, 9.45);
 			murover(0.38, 0.0, 0.0, 0.0, 0.0); //FRONT1 
@@ -503,6 +503,8 @@ void casa( GLvoid ) {
 			glTranslatef(0.64, 0.0, 7.63);
 			murohor(3.56, 0.0, 0.0, 0.0, 0.0); //RIGHT6 
 		glPopMatrix();
+	glPopMatrix();
+	glPushMatrix();//PISOS
 		glPushMatrix();
 			glTranslatef(-3.21, 0.0, 4.05);
 			pisocuadrado(4.0, 10.8, 0.0); //FLOOR LIVING-DINNING ROOM - KITCHEN
@@ -510,6 +512,64 @@ void casa( GLvoid ) {
 		glPushMatrix();
 			glTranslatef(-0.265, 0.0, 0.05);
 			pisocuadrado(1.890, 18.8, 0.0); //FLOOR AISLE
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(-2.08, 0.0, -3.0);
+			pisocuadrado(1.58, 3.14, 0.0); //FLOOR BATHROOM PRINCIPAL
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(1.56, 0.0, -8.5);
+			pisocuadrado(1.6, 1.6, 0.0); //FLOOR CL
+		glPopMatrix();
+	glPopMatrix();
+	glPushMatrix();//PAREDES INTERNAS
+		glPushMatrix();
+			glTranslatef(-3.21, 0.0, -1.31);
+			murover(4.0, 0.0, 0.0, 0.0, 0.0); //PARED COCINA-SALA DE JUEGOS IZQUIERDA
+			glTranslatef(-0.85, 0.0, -0.08);
+			murover(2.30, 0.0, 0.0, 0.0, 0.0); //PARED COCINA-SALA DE JUEGOS DERECHA
+			glTranslatef(2.0, 0.0, 0.0);
+			murover(1.70, 0.0, 0.0, 0.0, 0.0); //PARED COCINA-BAÑO
+		glPopMatrix();
+		glPushMatrix();//PAREDES BAÑO
+			glTranslatef(-2.91, 0.0, -3.0);
+			murohor(3.14, 0.0, 0.0, 0.0, 0.0); //PARED BAÑO SUPERIOR
+			glTranslatef(1.66, 0.0, 0.0);
+			murohor(3.14, 0.0, 0.0, 0.0, 0.0); //PARED BAÑO INFERIOR
+			glTranslatef(-0.83, 0.0, -1.53);
+			murover(1.58, 0.0, 0.0, 0.0, 0.0); //PARED BAÑO DERECHA
+		glPopMatrix();
+		glPushMatrix();//PAREDES CUARTO DE LAVADO
+			glTranslatef(0.72, 0.0, -8.5);
+			murohor(1.6, 0.0, 0.0, 0.0, 0.0); //PARED CL SUPERIOR
+			glTranslatef(1.68, 0.0, 0.0);
+			murohor(1.6, 0.0, 0.0, 0.0, 0.0); //PARED CL INFERIOR
+			glTranslatef(-0.84, 0.0, 0.76);
+			murover(1.6, 0.0, 0.0, 0.0, 0.0); //PARED CL IZQUIERDA
+		glPopMatrix();
+		glPushMatrix();//PAREDES RECAMARA 3
+			glTranslatef(2.93, 0.0, -4.36);
+			murover(4.5, 0.0, 0.0, 0.0, 0.0); //PARED IZQUIERDA
+			glTranslatef(-2.21, 0.0, -1.7);
+			murohor(3.4, 0.0, 0.0, 0.0, 0.0); //PARED SUPERIOR
+		glPopMatrix();
+		glPushMatrix();//PAREDES RECAMARA 2
+			glTranslatef(2.93, 0.0, -4.28);
+			murover(4.5, 0.0, 0.0, 0.0, 0.0); //PARED IZQUIERDA
+			glTranslatef(-2.21, 0.0, 2.465);
+			murohor(4.85, 0.0, 0.0, 0.0, 0.0); //PARED SUPERIOR
+		glPopMatrix();
+		glPushMatrix();//PAREDES RECAMARA 2
+		glTranslatef(2.93, 0.0, -4.28);
+		murover(4.5, 0.0, 0.0, 0.0, 0.0); //PARED IZQUIERDA
+		glTranslatef(-2.21, 0.0, 2.465);
+		murohor(4.85, 0.0, 0.0, 0.0, 0.0); //PARED SUPERIOR
+		glPopMatrix();
+		glPushMatrix();//PAREDES RECAMARA 1
+			//glTranslatef(2.93, 0.0, -4.28);
+			//murover(4.5, 0.0, 0.0, 0.0, 0.0); //PARED IZQUIERDA
+			//glTranslatef(-2.21, 0.0, 2.465);
+			//murohor(4.85, 0.0, 0.0, 0.0, 0.0); //PARED SUPERIOR
 		glPopMatrix();
 	glPopMatrix();
 }
